@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>social-button</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      .social-btn {
+        position: absolute;
+        /* background-color: red; */
+        width: 200px;
+        height: 200px;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50px);
+      }
+
+      .card {
+        display: inline-block;
+        height: 88px;
+        width: 88px;
+        border-style: solid;
+      }
+      .instagram {
+        border-radius: 100% 10px 10px 10px; /*T-L T-R B-R B-L*/
+        margin: 5px 0px 2px 5px; /*top right bottom left*/
+      }
+      .discord {
+        border-radius: 10px 100% 10px 10px;
+        margin: 5px 5px 4px 0px; /*top right bottom left*/
+      }
+      .twitter {
+        border-radius: 10px 10px 10px 100%;
+        margin: 0px 0px 5px 5px; /*top right bottom left*/
+      }
+      .github {
+        border-radius: 10px 10px 100% 10px;
+        margin: 0px 5px 5px 0px; /*top right bottom left*/
+      }
+      .share-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-radius: 50%;
+        background-color: #fff;
+        height: 40px;
+        width: 40px;
+
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+      #instagram {
+        position: relative;
+        top: 50%;
+        left: 40%;
+        color: #29c9ac;
+      }
+
+      #discord {
+        position: relative;
+        top: 50%;
+        left: 20%;
+        color: #22bac8;
+      }
+
+      #twitter {
+        position: relative;
+        top: 30%;
+        left: 40%;
+        color: #22bac8;
+      }
+      #github {
+        position: relative;
+        top: 30%;
+        left: 20%;
+        color: #22bac8;
+      }
+
+      .show{
+        display: block;
+      }
+      .hidden{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="social-btn">
+        <div class="hidden show">
+      <div class="upper">
+        <div class="card instagram">
+          <a href=" " target="_blank" id="instagram"
+            ><i class="fab fa-instagram fa-2xl"></i
+          ></a>
+        </div>
+
+        <div class="card discord">
+          <a href=" " target="_blank" id="discord"
+            ><i class="fa-brands fa-discord fa-2xl"></i
+          ></a>
+        </div>
+      </div>
+      <div class="lower">
+        <div class="card twitter">
+          <a href="" target="_blank" id="twitter"
+            ><i class="fab fa-twitter fa-2xl" style="color: #1da1f2"></i
+          ></a>
+        </div>
+        <div class="card github">
+          <a href="" target="_blank" id="github"
+            ><i class="fab fa-github fa-2xl"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+      <button class="share-btn"><i class="fa-sharp fa-solid fa-share-nodes fa-2xl"></i>
+        
+      </div>
+    </div>
+  </body>
+  <script>
+
+    const shareBtn = document.querySelector(".share-btn");
+    const show =document.querySelector(".show");
+    // function hide(){
+    //     document.querySelector(".show").classList.add("hidden");
+    // }
+    
+    shareBtn.addEventListener("click",function(){
+        if(show.classList.contains("hidden")){
+            
+        show.classList.remove("hidden");
+        //setTimeout(hide,5000); //setTimeout(FUNCTION, timeout time in milisec)
+    }else if(!show.classList.contains("hidden"))
+    {
+        show.classList.add("hidden");
+    }
+});
+
+  </script>
+</html>
