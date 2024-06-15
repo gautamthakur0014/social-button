@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>social-button</title>
@@ -10,11 +11,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
-   
     <style>
-      body{
+      body {
         background-color: #000000;
       }
+
       .social-btn {
         position: absolute;
         top: 40%;
@@ -23,8 +24,6 @@
         width: 200px;
         height: 200px;
         transform: translateX(-50px);
-        transition: .2s ease-in-out;
-        
       }
 
       .card {
@@ -33,24 +32,31 @@
         height: 88px;
         width: 88px;
         border-style: none;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-        transition: 300ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       }
       .instagram {
         border-radius: 100% 10px 10px 10px; /*T-L T-R B-R B-L*/
         margin: 5px 0px 2px 5px; /*top right bottom left*/
+        transition: 300ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
       }
       .discord {
         border-radius: 10px 100% 10px 10px;
         margin: 5px 5px 4px 0px; /*top right bottom left*/
+        transition: 400ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
+        /* transition: 300ms cubic-bezier(0.76, -0.19, 0.15, 1.17); */
       }
       .twitter {
         border-radius: 10px 10px 10px 100%;
         margin: 0px 0px 5px 5px; /*top right bottom left*/
+        transition: 500ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
+        /* transition: 300ms cubic-bezier(0.72,-0.26, 0.02, 1.46); */
       }
       .github {
         border-radius: 10px 10px 100% 10px;
         margin: 0px 5px 5px 0px; /*top right bottom left*/
+        transition: 600ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
+        /* transition: 300ms cubic-bezier(1, -0.31, 0.02, 1.46); */
       }
       .share-btn {
         display: flex;
@@ -61,11 +67,11 @@
         background-color: #fff;
         height: 45px;
         width: 45px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         position: absolute;
         top: 35%;
         left: 37%;
-        transition: all .1s ease-in;
       }
       #instagram {
         position: relative;
@@ -78,14 +84,14 @@
         position: relative;
         top: 50%;
         left: 20%;
-        color: #03A9F4;
+        color: #03a9f4;
       }
 
       #twitter {
         position: relative;
         top: 30%;
         left: 40%;
-        color: #03A9F4;
+        color: #03a9f4;
       }
       #github {
         position: relative;
@@ -94,100 +100,123 @@
         color: #000000;
       }
 
-      
-      .hidden{
-        display: none;
-        
+      .instagram:hover {
+        background-color: #cc39a4;
+        transform: scale(1.1);
+        transition: all 0.1s ease-in;
+      }
+      .instagram:hover #instagram {
+        color: white;
       }
 
-      .instagram:hover{
-        background-color:#cc39a4 ;
+      .discord:hover {
+        background-color: #03a9f4;
         transform: scale(1.1);
-        transition: all .1s ease-in;
-        
+        transition: all 0.1s ease-in;
       }
-      .instagram:hover #instagram{
+      .discord:hover #discord {
         color: white;
       }
-      
-      .discord:hover{
-        background-color:#03A9F4 ;
+      .twitter:hover {
+        background-color: #03a9f4;
         transform: scale(1.1);
-        transition: all .1s ease-in;
+        transition: all 0.1s ease-in;
       }
-      .discord:hover #discord{
-        color: white;
-      }
-      .twitter:hover{
-        background-color:#03A9F4 ;
-        transform: scale(1.1);
-        transition: all .1s ease-in;
-      }
-      .twitter:hover #twitter{
+      .twitter:hover #twitter {
         color: rgb(255, 255, 255);
       }
-      .github:hover{
-        background-color:#262323 ;
+      .github:hover {
+        background-color: #262323;
         transform: scale(1.1);
-        transition: all .1s ease-in;
+        transition: all 0.1s ease-in;
       }
-      .github:hover #github{
+      .github:hover #github {
         color: white;
       }
-      .share-btn:hover{
+      .share-btn:hover {
         background-color: #e1e1e1;
         transform: scale(1.1);
-        transition: all .1s ease-in;
+        transition: all 0.1s ease-in;
+      }
+      .card1 {
+        transform: translateY(50px) translateX(60px) scale(0);
+      }
+      .card2 {
+        transform: translateY(50px) translateX(-60px) scale(0);
+      }
+      .card3 {
+        transform: translateY(-50px) translateX(60px) scale(0);
+      }
+      .card4 {
+        transform: translateY(-50px) translateX(-60px) scale(0);
+      }
+
+      h1 {
+        font-family: "Times New Roman";
+        font-size: 50px;
+        margin-top: 100px;
+        color: aliceblue;
+        text-align: center;
+      }
+      h4 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 100px;
       }
     </style>
   </head>
   <body>
-    <div class="social-btn">
-        <div class="toggleable">
-            <div class="upper">
-                <div class="card instagram">
-                <a href="https://instagram.com" target="_blank" id="instagram"
+    <header><h1>SOCIAL BUTTON</h1></header>
+
+    <main>
+      <div class="social-btn">
+        <div class="card-container">
+          <div class="upper">
+            <div class="card instagram">
+              <a href="https://instagram.com" target="_blank" id="instagram"
                 ><i class="fab fa-instagram fa-2xl"></i
-                ></a>
+              ></a>
             </div>
 
             <div class="card discord">
-                <a href=" " target="_blank" id="discord"
+              <a href=" " target="_blank" id="discord"
                 ><i class="fa-brands fa-discord fa-2xl"></i
-                ></a>
+              ></a>
             </div>
-
-         </div>
-      <div class="lower">
-        <div class="card twitter">
-          <a href="" target="_blank" id="twitter"
-            ><i class="fab fa-twitter fa-2xl" ></i
-          ></a>
+          </div>
+          <div class="lower">
+            <div class="card twitter">
+              <a href="" target="_blank" id="twitter"
+                ><i class="fab fa-twitter fa-2xl"></i
+              ></a>
+            </div>
+            <div class="card github">
+              <a href="" target="_blank" id="github"
+                ><i class="fab fa-github fa-2xl"></i
+              ></a>
+            </div>
+          </div>
         </div>
-        <div class="card github">
-          <a href="" target="_blank" id="github"
-            ><i class="fab fa-github fa-2xl"></i
-          ></a>
-        </div>
+        <button class="share-btn">
+          <i class="fa-solid fa-link fa-2xl"></i>
+        </button>
       </div>
-    </div>
-      <button class="share-btn"><i class="fa-solid fa-link fa-2xl"></i></button>
-        
-      </div>
-    </div>
+    </main>
+    <footer><h4>©gautamthakur0014</h4></footer>
   </body>
   <script>
-
     const shareBtn = document.querySelector(".share-btn");
-    const toggleable =document.querySelector(".toggleable");
-    
-    
-    shareBtn.addEventListener("click",function(){
-      toggleable.classList.toggle("hidden");
-    
-});
+    const toggleable = document.querySelector(".toggleable");
+    const card1 = document.querySelector(".instagram");
+    const card2 = document.querySelector(".discord");
+    const card3 = document.querySelector(".twitter");
+    const card4 = document.querySelector(".github");
 
-
-
+    shareBtn.addEventListener("click", function () {
+      card1.classList.toggle("card1");
+      card2.classList.toggle("card2");
+      card3.classList.toggle("card3");
+      card4.classList.toggle("card4");
+    });
   </script>
 </html>
