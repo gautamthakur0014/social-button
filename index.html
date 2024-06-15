@@ -10,22 +10,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
+   
     <style>
+      body{
+        background-color: #000000;
+      }
       .social-btn {
         position: absolute;
+        top: 40%;
+        left: 45%;
         /* background-color: red; */
         width: 200px;
         height: 200px;
-        top: 40%;
-        left: 50%;
         transform: translateX(-50px);
+        transition: .2s ease-in-out;
+        
       }
 
       .card {
+        background-color: rgb(247, 247, 247);
         display: inline-block;
         height: 88px;
         width: 88px;
-        border-style: solid;
+        border-style: none;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transition: 300ms cubic-bezier(0.73, -0.18, 0.02, 1.46);
       }
       .instagram {
         border-radius: 100% 10px 10px 10px; /*T-L T-R B-R B-L*/
@@ -47,71 +56,112 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-style: solid;
+        border-style: none;
         border-radius: 50%;
         background-color: #fff;
-        height: 40px;
-        width: 40px;
-
+        height: 45px;
+        width: 45px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         position: absolute;
-        top: 40%;
-        left: 40%;
+        top: 35%;
+        left: 37%;
+        transition: all .1s ease-in;
       }
       #instagram {
         position: relative;
         top: 50%;
         left: 40%;
-        color: #29c9ac;
+        color: #cc39a4;
       }
 
       #discord {
         position: relative;
         top: 50%;
         left: 20%;
-        color: #22bac8;
+        color: #03A9F4;
       }
 
       #twitter {
         position: relative;
         top: 30%;
         left: 40%;
-        color: #22bac8;
+        color: #03A9F4;
       }
       #github {
         position: relative;
         top: 30%;
         left: 20%;
-        color: #22bac8;
+        color: #000000;
       }
 
-      .show{
-        display: block;
-      }
+      
       .hidden{
         display: none;
+        
+      }
+
+      .instagram:hover{
+        background-color:#cc39a4 ;
+        transform: scale(1.1);
+        transition: all .1s ease-in;
+        
+      }
+      .instagram:hover #instagram{
+        color: white;
+      }
+      
+      .discord:hover{
+        background-color:#03A9F4 ;
+        transform: scale(1.1);
+        transition: all .1s ease-in;
+      }
+      .discord:hover #discord{
+        color: white;
+      }
+      .twitter:hover{
+        background-color:#03A9F4 ;
+        transform: scale(1.1);
+        transition: all .1s ease-in;
+      }
+      .twitter:hover #twitter{
+        color: rgb(255, 255, 255);
+      }
+      .github:hover{
+        background-color:#262323 ;
+        transform: scale(1.1);
+        transition: all .1s ease-in;
+      }
+      .github:hover #github{
+        color: white;
+      }
+      .share-btn:hover{
+        background-color: #e1e1e1;
+        transform: scale(1.1);
+        transition: all .1s ease-in;
       }
     </style>
   </head>
   <body>
     <div class="social-btn">
-        <div class="hidden show">
-      <div class="upper">
-        <div class="card instagram">
-          <a href=" " target="_blank" id="instagram"
-            ><i class="fab fa-instagram fa-2xl"></i
-          ></a>
-        </div>
+        <div class="toggleable">
+            <div class="upper">
+                <div class="card instagram">
+                <a href="https://instagram.com" target="_blank" id="instagram"
+                ><i class="fab fa-instagram fa-2xl"></i
+                ></a>
+            </div>
 
-        <div class="card discord">
-          <a href=" " target="_blank" id="discord"
-            ><i class="fa-brands fa-discord fa-2xl"></i
-          ></a>
-        </div>
-      </div>
+            <div class="card discord">
+                <a href=" " target="_blank" id="discord"
+                ><i class="fa-brands fa-discord fa-2xl"></i
+                ></a>
+            </div>
+
+         </div>
       <div class="lower">
         <div class="card twitter">
           <a href="" target="_blank" id="twitter"
-            ><i class="fab fa-twitter fa-2xl" style="color: #1da1f2"></i
+            ><i class="fab fa-twitter fa-2xl" ></i
           ></a>
         </div>
         <div class="card github">
@@ -121,7 +171,7 @@
         </div>
       </div>
     </div>
-      <button class="share-btn"><i class="fa-sharp fa-solid fa-share-nodes fa-2xl"></i>
+      <button class="share-btn"><i class="fa-solid fa-link fa-2xl"></i></button>
         
       </div>
     </div>
@@ -129,21 +179,15 @@
   <script>
 
     const shareBtn = document.querySelector(".share-btn");
-    const show =document.querySelector(".show");
-    // function hide(){
-    //     document.querySelector(".show").classList.add("hidden");
-    // }
+    const toggleable =document.querySelector(".toggleable");
+    
     
     shareBtn.addEventListener("click",function(){
-        if(show.classList.contains("hidden")){
-            
-        show.classList.remove("hidden");
-        //setTimeout(hide,5000); //setTimeout(FUNCTION, timeout time in milisec)
-    }else if(!show.classList.contains("hidden"))
-    {
-        show.classList.add("hidden");
-    }
+      toggleable.classList.toggle("hidden");
+    
 });
+
+
 
   </script>
 </html>
